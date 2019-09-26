@@ -2,14 +2,21 @@ package com.handtruth.lessons.lesson1.task1;
 
 class Simple {
 
-
-
+    /**
+     * Trivial
+     *
+     * Вычислить дискриминант квадратного уравнения
+     */
     double discriminant(double a, double b, double c) {
-        //TODO your code
+
         return 0.0;
     }
 
-
+    /**
+     * Trivial
+     *
+     * Поиск одного из корней квадратного уравнения
+     */
     double sqRoot(double a, double b, double c) {
         //TODO your code
         return 0.0;
