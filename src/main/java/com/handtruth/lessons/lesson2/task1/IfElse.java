@@ -11,8 +11,15 @@ class IfElse {
      * Если второе больше первого - -1
      */
     int compare(int a, int b) {
-        // TODO your code
-        return 0;
+        if (a > b) {
+            return 1;
+        }
+        else if (a < b) {
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
 
@@ -23,8 +30,19 @@ class IfElse {
      * вернуть строку вида: «21 год», «32 года», «12 лет».
      */
     String ageDescription(int age) {
-        // TODO your code
-        return "TODO";
+        int a = age % 10; //Последняя цифра
+        if (age == 11 || age == 12 || age == 13 || age == 14 || age == 111) {
+            return age + " лет";
+        }
+        if (a == 1){
+            return age + " год";
+        }
+        else if (a == 2 || a == 3 || a == 4) {
+            return age + " года";
+        }
+        else {
+            return age + " лет";
+        }
     }
 
     /**
@@ -36,9 +54,36 @@ class IfElse {
      * Если такой треугольник не существует, вернуть -1.
      */
     int triangleKind(double a, double b, double c) {
-        // TODO your code
+        double x = 0;
+        double max = 0;
+        if (a >= b & a >= c){
+            max = a;
+            x = b*b + c*c;
+        }
+        else if (b >= a & b >= c){
+            max = b;
+            x = c*c + a*a;
+        }
+        else if (c >= a & c >= b){
+            max = c;
+            x = a*a + b*b;
+        }
+
+        if (a + b > c & b + c > a & a + c > b) {
+            if (Math.pow(max, 2) > x) {
+                return 2;
+            }
+            if (Math.pow(max, 2) == x) {
+                return 1;
+            }
+            if (Math.pow(max, 2) < x) {
+                return 0;
+            }
+        }
         return -1;
     }
+
+
 
     /**
      * Medium
@@ -50,7 +95,23 @@ class IfElse {
      */
 
     int segmentLength(int a, int b, int c, int d) {
-        // TODO your code
+        int min = 0;
+        int max = 0;
+        if (a > c){
+            max = a;
+        }
+        else if (c > a){
+            max = c;
+        }
+        if (b < d){
+            min = b;
+        }
+        else if (d < b){
+            min = d;
+        }
+        if (min >= max){
+            return min - max;
+        }
         return -1;
     }
 }
